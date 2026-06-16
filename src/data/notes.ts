@@ -5,7 +5,41 @@ export interface Note {
   date: string
   tags: string[]
   readingMinutes?: number
+  /** 子章节列表，有则在详情页展示自定义目录 */
+  chapters?: Chapter[]
 }
+
+export interface Chapter {
+  slug: string
+  title: string
+  description: string
+}
+
+/* ──────────────────────────────────────────────
+   Agent 原理与实现 — 子章节
+────────────────────────────────────────────── */
+export const agentPrinciplesChapters: Chapter[] = [
+  {
+    slug: "core-loop",
+    title: "核心闭环",
+    description: "Agent 的 Perceive → Think → Act 感知-思考-行动循环，理解 ReAct / Plan-and-Execute 等范式的本质。",
+  },
+  {
+    slug: "system-hardening",
+    title: "系统加固",
+    description: "提示注入防御、沙箱隔离、权限最小化、幂等工具设计——让 Agent 在生产环境中安全可靠地运行。",
+  },
+  {
+    slug: "task-runtime",
+    title: "任务运行时",
+    description: "长期记忆与短期上下文管理、工具调用协议（Function Calling / MCP）、流式输出与中断恢复。",
+  },
+  {
+    slug: "multi-agent-platform",
+    title: "多 Agent 平台",
+    description: "Orchestrator-Worker 架构、Agent 间通信与协作协议、任务路由与结果聚合的工程实践。",
+  },
+]
 
 /* ──────────────────────────────────────────────
    后端学习
@@ -104,12 +138,12 @@ export const aiNotes: Note[] = [
     readingMinutes: 18,
   },
   {
-    slug: "prompt-engineering",
-    title: "Prompt Engineering 最佳实践",
-    description: "如何编写高质量的提示词，让 AI 模型输出更准确、更有用的结果",
+    slug: "agent-principles",
+    title: "Agent 原理与实现",
+    description: "深入理解 AI Agent 的核心原理，包括规划、记忆、工具调用等关键能力的设计与实现",
     date: "2024-01-10",
-    tags: ["Prompt", "实践"],
-    readingMinutes: 10,
+    tags: ["Agent", "原理"],
+    readingMinutes: 15,
   },
   {
     slug: "ai-app-development",

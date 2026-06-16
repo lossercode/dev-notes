@@ -18,7 +18,7 @@ export function ArticleContent({
   readingMinutes,
 }: ArticleContentProps) {
   return (
-    <article className="mx-auto max-w-2xl px-6 py-10 lg:px-10 lg:py-12">
+    <article className="mx-auto max-w-4xl px-6 py-10 lg:px-10 lg:py-12">
       {/* ── 文章头部 ── */}
       <header className="mb-8 border-b border-zinc-100 dark:border-zinc-800 pb-8">
         {/* 标签 */}

@@ -1,20 +1,12 @@
 import { Navbar } from "@/components/Navbar"
 import { DetailLayout } from "@/components/DetailLayout"
 import { ArticleContent } from "@/components/ArticleContent"
-import { backendNotes } from "@/data/notes"
-
-const navItems = backendNotes.map(({ slug, title, tags }) => ({ slug, title, tags }))
 
 export default function Page() {
   return (
     <>
       <Navbar />
-      <DetailLayout
-        categoryHref="/backend"
-        categoryTitle="后端学习"
-        items={navItems}
-        activeSlug="microservice-architecture"
-      >
+      <DetailLayout categoryHref="/">
         <ArticleContent
           title="微服务架构设计模式"
           description="服务拆分、通信方式、数据一致性等微服务架构核心问题的解决方案"
